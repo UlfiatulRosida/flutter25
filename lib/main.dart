@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter25/pages/album_page.dart';
 import 'package:flutter25/pages/home_page.dart';
 import 'package:flutter25/pages/profile_page.dart';
 import 'package:flutter25/pages/setting_page.dart';
@@ -16,6 +17,7 @@ class MainApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/setting': (context) => SettingPage(),
         '/profile': (context) => ProfilePage(),
+        '/profile': (context) => AlbumPage(),
       },
       // home: Scaffold(body: Center(child: Text("halo"))),
     );
