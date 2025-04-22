@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
         '/': (context) => HomePage(),
         '/setting': (context) => SettingPage(),
         '/profile': (context) => ProfilePage(),
-        '/profile': (context) => AlbumPage(),
+        '/album': (context) => AlbumPage(),
       },
       // home: Scaffold(body: Center(child: Text("halo"))),
     );
