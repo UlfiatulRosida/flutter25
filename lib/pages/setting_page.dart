@@ -6,7 +6,7 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Setting Page")),
+      appBar: AppBar(title: Text("setting Page")),
       body: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/profile"),
