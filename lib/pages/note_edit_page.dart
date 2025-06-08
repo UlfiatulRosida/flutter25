@@ -34,8 +34,11 @@ class _NoteEditPageState extends State<NoteEditPage> {
         await supabase.from('notes').insert({
           'title': title,
           'description': description,
+          'created_at': DateTime.now().toIso8601String(),
         });
       }
+
+      if (!mounted) return;
 
       ScaffoldMessenger.of(
         context,
@@ -69,9 +72,13 @@ class _NoteEditPageState extends State<NoteEditPage> {
     if (confirmed == true) {
       final supabase = Supabase.instance.client;
       await supabase.from('notes').delete().eq('id', note?.id ?? '');
+
+      if (!mounted) return;
+
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('berhasil menghapus catatan')));
+      ).showSnackBar(
+          const SnackBar(content: Text('berhasil menghapus catatan')));
 
       Navigator.pop<String>(context, 'OK');
     }

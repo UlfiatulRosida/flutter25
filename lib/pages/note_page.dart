@@ -65,7 +65,7 @@ class _NotePageState extends State<NotePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Note Page")),
+      appBar: AppBar(title: const Text("Note Page")),
       body: Center(
         child: FutureBuilder(
           future: futureNote,

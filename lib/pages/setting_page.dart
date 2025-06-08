@@ -6,11 +6,11 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("setting Page")),
+      appBar: AppBar(title: const Text("setting Page")),
       body: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, "/profile"),
-          child: Text("Profile"),
+          child: const Text("Profile"),
         ),
       ),
     );

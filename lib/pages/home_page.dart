@@ -8,11 +8,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: const Text("Home Page"),
         actions: [
           IconButton(
             onPressed: () => Navigator.pushNamed(context, '/setting'),
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
           ),
         ],
       ),
@@ -22,20 +22,20 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => DetailPage(id: 123),
-                  settings: RouteSettings(arguments: "buku"),
+                  builder: (context) => const DetailPage(id: 123),
+                  settings: const RouteSettings(arguments: "buku"),
                 ),
               ),
-              child: Text("Detail"),
+              child: const Text("Detail"),
             ),
             const Text("Home Page"),
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, "/album"),
-              child: Text("Album"),
+              child: const Text("Album"),
             ),
             ElevatedButton(
               onPressed: () => Navigator.pushNamed(context, "/note"),
-              child: Text("Note Page"),
+              child: const Text("Note Page"),
             ),
           ],
         ),

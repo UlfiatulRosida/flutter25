@@ -25,14 +25,29 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter 25',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+          ),
+        ),
+      ),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
-        '/setting': (context) => SettingPage(),
-        '/profile': (context) => ProfilePage(),
-        '/album': (context) => AlbumPage(),
-        '/note': (context) => NotePage(),
-        '/note/edit': (context) => NoteEditPage(),
+        '/': (context) => const HomePage(),
+        '/setting': (context) => const SettingPage(),
+        '/profile': (context) => const ProfilePage(),
+        '/album': (context) => const AlbumPage(),
+        '/note': (context) => const NotePage(),
+        '/note/edit': (context) => const NoteEditPage(),
       },
       // home: Scaffold(body: Center(child: Text("halo"))),
     );

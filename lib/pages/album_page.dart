@@ -31,14 +31,15 @@ class Album {
   const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
-    return switch (json) {
-      {'userId': int userId, 'id': int id, 'title': String title} => Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
-      _ => throw const FormatException('Failed to load album.'),
-    };
+    try {
+      return Album(
+        userId: json['userId'] as int,
+        id: json['id'] as int,
+        title: json['title'] as String,
+      );
+    } catch (e) {
+      throw Exception('Failed to parse album: $e');
+    }
   }
 }
 
@@ -61,7 +62,7 @@ class _AlbumPageState extends State<AlbumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Album Page")),
+      appBar: AppBar(title: const Text("Album Page")),
       body: Center(
         child: FutureBuilder<Album>(
           future: futureAlbum,
